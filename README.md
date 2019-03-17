@@ -37,27 +37,49 @@ Un ejemplo de la salida de la primera prueba se describe a continuación.
 Iniciando pruebas en clase TestConsigna!
 
 INICIO DE METODO TEST!
+
 PRUEBA: pruebaDeDiezLlamadas()
+
 Inicio llamada '0' de 7 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Juan, apellidos=Lopez}
+
 Inicio llamada '1' de 5 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Carlos, apellidos=Rojas}
+
 Inicio llamada '2' de 5 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Andres, apellidos=Suarez}
+
 Inicio llamada '3' de 8 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Franco, apellidos=Morales}
+
 Inicio llamada '4' de 8 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Laura, apellidos=Romano}
+
 Inicio llamada '5' de 8 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Diana, apellidos=Robledo}
+
 Inicio llamada '6' de 6 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Maria, apellidos=Morales}
+
 Inicio llamada '7' de 5 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Francisco, apellidos=Sepulveda}
+
 Inicio llamada '8' de 5 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Luisa, apellidos=Mendez}
+
 Inicio llamada '9' de 9 seg: Sun Mar 17 09:56:47 COT 2019, atendida por PersonaCallCenter{nombres=Victor, apellidos=Mercedez}
+
 Fin llamada '2' de 5 seg: Sun Mar 17 09:56:52 COT 2019, atendida por PersonaCallCenter{nombres=Andres, apellidos=Suarez}
+
 Fin llamada '1' de 5 seg: Sun Mar 17 09:56:52 COT 2019, atendida por PersonaCallCenter{nombres=Carlos, apellidos=Rojas}
+
 Fin llamada '7' de 5 seg: Sun Mar 17 09:56:52 COT 2019, atendida por PersonaCallCenter{nombres=Francisco, apellidos=Sepulveda}
+
 Fin llamada '8' de 5 seg: Sun Mar 17 09:56:52 COT 2019, atendida por PersonaCallCenter{nombres=Luisa, apellidos=Mendez}
+
 Fin llamada '6' de 6 seg: Sun Mar 17 09:56:53 COT 2019, atendida por PersonaCallCenter{nombres=Maria, apellidos=Morales}
+
 Fin llamada '0' de 7 seg: Sun Mar 17 09:56:54 COT 2019, atendida por PersonaCallCenter{nombres=Juan, apellidos=Lopez}
+
 Fin llamada '3' de 8 seg: Sun Mar 17 09:56:55 COT 2019, atendida por PersonaCallCenter{nombres=Franco, apellidos=Morales}
+
 Fin llamada '4' de 8 seg: Sun Mar 17 09:56:55 COT 2019, atendida por PersonaCallCenter{nombres=Laura, apellidos=Romano}
+
 Fin llamada '5' de 8 seg: Sun Mar 17 09:56:55 COT 2019, atendida por PersonaCallCenter{nombres=Diana, apellidos=Robledo}
+
 Fin llamada '9' de 9 seg: Sun Mar 17 09:56:56 COT 2019, atendida por PersonaCallCenter{nombres=Victor, apellidos=Mercedez}
+
 FIN DE METODO TEST!
 
 Finalizando pruebas en clase TestConsigna!
