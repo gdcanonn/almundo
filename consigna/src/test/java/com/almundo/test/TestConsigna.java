@@ -3,6 +3,8 @@ package com.almundo.test;
 import com.almundo.consigna.Dispatcher;
 import com.almundo.consigna.Llamada;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,6 +23,9 @@ public class TestConsigna {
     // Sistema que atiende y administra las llamadas para la prueba pruebaDeDiezLlamadasConEncolamiento()
     private static Dispatcher dispatcher2;
     
+    // Sistema que atiende y administra las llamadas para la prueba pruebaDeDiezLlamadasMasDespuesDeAlgunosSegundos()
+    private static Dispatcher dispatcher3;
+    
     @BeforeClass
     public static void config() {
         System.out.println("Iniciando pruebas en clase TestConsigna!");
@@ -29,6 +34,9 @@ public class TestConsigna {
         
         dispatcher2 = new Dispatcher();
         dispatcher2.crearPersonasCallCenter();
+        
+        dispatcher3 = new Dispatcher();
+        dispatcher3.crearPersonasCallCenter();
     }
     
     @AfterClass
@@ -38,7 +46,7 @@ public class TestConsigna {
     
     @Before
     public void initTestMethod() {
-        System.out.println("\nINICIO DE NUEVO METODO TEST!");
+        System.out.println("\nINICIO DE METODO TEST!");
     }
 
     @After
@@ -52,6 +60,8 @@ public class TestConsigna {
      */
     @Test
     public void pruebaDeDiezLlamadas() {
+        System.out.println("PRUEBA: pruebaDeDiezLlamadas()");
+        
         // Se lanzan 10 llamadas simultaneamente para 10 personas que trabajan en el Call Center (7 operadores, 2 supervisores, 1 director)
         for (int i = 0; i < 10; i++) {
             Llamada llamada = new Llamada();
@@ -72,6 +82,8 @@ public class TestConsigna {
      */
     @Test
     public void pruebaDeDiezLlamadasConEncolamiento() {
+        System.out.println("PRUEBA: pruebaDeDiezLlamadasConEncolamiento()");
+        
         // Se lanzan 20 llamadas simultaneamente para solamente 10 personas que trabajan en el Call Center (7 operadores, 2 supervisores, 1 director)
         for (int i = 0; i < 20; i++) {
             Llamada llamada = new Llamada();
@@ -83,6 +95,44 @@ public class TestConsigna {
         
         // Se realiza este while para que no se corte la prueba hasta que todas las llamadas terminen de atendersen
         while (!dispatcher2.validarLlamadasAtendidas()) {
+        }
+    }
+    
+    /**
+     * Método que simulará 20 llamadas. Se lanzarán primero 10 llamadas y 6 segundos despues otras 10 llamadas mas.
+     * Esto producirá que algunas de las llamadas queden en cola (menos llamadas en cola que la prueba pruebaDeDiezLlamadasConEncolamiento())
+     */
+    @Test
+    public void pruebaDeDiezLlamadasMasDespuesDeAlgunosSegundos() {
+        System.out.println("PRUEBA: pruebaDeDiezLlamadasMasDespuesDeAlgunosSegundos()");
+        
+        // Se lanzan 10 llamadas simultaneamente para solamente 10 personas que trabajan en el Call Center (7 operadores, 2 supervisores, 1 director)
+        for (int i = 0; i < 10; i++) {
+            Llamada llamada = new Llamada();
+            llamada.setCodigoLlamada(i);
+            llamada.setFechaRecepcionLlamada(new Date());
+            llamada.setDispatcher(dispatcher3);
+            dispatcher3.dispatchCall(llamada);
+        }
+        
+        // Se detiene la ejecucion 6 segundos
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestConsigna.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        // Se lanzan 10 llamadas mas 6 segundos despues, generando asi algunas llamadas en encolamiento
+        for (int i = 10; i < 20; i++) {
+            Llamada llamada = new Llamada();
+            llamada.setCodigoLlamada(i);
+            llamada.setFechaRecepcionLlamada(new Date());
+            llamada.setDispatcher(dispatcher3);
+            dispatcher3.dispatchCall(llamada);
+        }
+        
+        // Se realiza este while para que no se corte la prueba hasta que todas las llamadas terminen de atendersen
+        while (!dispatcher3.validarLlamadasAtendidas()) {
         }
     }
     

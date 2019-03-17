@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.almundo.test.TestConsigna
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.127 s - in com.almundo.test.TestConsigna
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 53.189 s - in com.almundo.test.TestConsigna
